@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ScCartItem, ScCartItemDetails } from './scParts';
 import { CartContext } from '../contexts/CartContext';
 
-const Item = ({ id, image, title, price }) => {
+const Item = ({ id, image, title, price, quantity }) => {
   const { removeItem } = useContext(CartContext);
 
   return (
@@ -11,7 +11,7 @@ const Item = ({ id, image, title, price }) => {
 
       <ScCartItemDetails>
         <h2>{title}</h2>
-        <p>$ {price}</p>
+        <p>$ {price} x {quantity}</p>
         <button onClick={() => removeItem(id)}>Remove from cart</button>
       </ScCartItemDetails>
     </ScCartItem>
